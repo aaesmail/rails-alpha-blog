@@ -1,0 +1,28 @@
+<h1>Categories</h1>
+
+<p>
+  <%= will_paginate @categories %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Articles Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category_path(category) %></td>
+        <td><%= pluralize(category.articles.count, "article") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Create new category', new_category_path %> |
+  <%= link_to 'Home page', root_path %>
+</p>

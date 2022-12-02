@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlphaBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <%= link_to "#{'(Admin) ' if current_user.admin?}#{current_user.username}", user_path(current_user) %> |
+      <%= link_to "Delete Profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" } %> |
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "Login", login_path %> |
+      <%= link_to "Signup", signup_path %>
+    <% end %>
+    <br />
+    <br />
+
+    <%= render 'layouts/messages' %>
+
+    <%= yield %>
+  </body>
+</html>
