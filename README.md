@@ -1,24 +1,10 @@
-# README
+# Alpha Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Webapp that has a user management system.
+Users can create blogs, comment on them and follow other users or like their blogs.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Technologies:
+- Ruby
+- Ruby On Rails
+- bcrypt (to encrypt user's password)
+- sqlite3
